@@ -33,7 +33,9 @@ A sleek dark-theme crypto sportsbook with a complete **admin back office**. Supp
 
 ### 🎬 Demo Video
 
-▶️ **[Watch BoiBook in action](version-1/sports-betting-1.mp4)**
+[![BoiBook demo](version-1/demo-1.gif)](version-1/sports-betting-1.mp4)
+
+*▶️ Click the preview above to watch the [full video](version-1/sports-betting-1.mp4)*
 
 ### ✨ Key Features
 
@@ -69,7 +71,9 @@ A complete **iGaming platform combining Sportsbook and Casino**, built for high-
 
 ### 🎬 Demo Video
 
-▶️ **[Watch BetFrenzy in action](version-2/sports-betting-2.mp4)**
+[![BetFrenzy demo](version-2/demo-2.gif)](version-2/sports-betting-2.mp4)
+
+*▶️ Click the preview above to watch the [full video](version-2/sports-betting-2.mp4)*
 
 ### ✨ Key Features
 
@@ -102,7 +106,9 @@ A **fully on-chain, non-custodial sportsbook** built on the **Azuro protocol**. 
 
 ### 🎬 Demo Video
 
-▶️ **[Watch the Web3 Sportsbook in action](version-3/sports-betting-3.mp4)**
+[![Web3 Sportsbook demo](version-3/demo-3.gif)](version-3/sports-betting-3.mp4)
+
+*▶️ Click the preview above to watch the [full video](version-3/sports-betting-3.mp4)*
 
 ### ✨ Key Features
 
