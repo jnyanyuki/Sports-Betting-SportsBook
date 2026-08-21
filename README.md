@@ -1,75 +1,162 @@
-```markdown
-# Hacktoberfest 2024 Open Source Repository 🎉
+# 🏆 Sports Betting Platform — Sportsbook & Casino Solutions
 
-Welcome to our Hacktoberfest 2024 Repository! We're excited to collaborate with developers, designers, and open-source enthusiasts from around the world. This project is part of **Hacktoberfest 2024** by DigitalOcean, celebrating open source and encouraging new contributors to join the community.
+<div align="center">
 
-## 📚 About the Project
+**Production-ready sports betting & iGaming platforms — 3 complete versions, from crypto sportsbooks to fully decentralized Web3 betting.**
 
-This repository aims to provide an engaging and welcoming experience for anyone looking to make meaningful contributions. You’ll find opportunities for all skill levels here, from beginners to seasoned professionals. Contributing here means you’re helping to build a stronger, more robust open-source ecosystem!
+[![Telegram](https://img.shields.io/badge/Telegram-Contact%20Us-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/igamezgamble)
+[![Website](https://img.shields.io/badge/Website-kavenzagaming.com-00C853?style=for-the-badge&logo=googlechrome&logoColor=white)](https://kavenzagaming.com/)
 
----
+⚽ Soccer · 🏀 Basketball · 🎾 Tennis · 🏓 Table Tennis · 🥊 MMA/UFC · 🎮 eSports — **Live & Pre-match betting** with real-time odds
 
-## 🌐 What is Hacktoberfest?
-
-Hacktoberfest is a month-long event hosted by DigitalOcean, focused on open-source contributions. To participate:
-
-1. Register for Hacktoberfest at [hacktoberfest.com](https://hacktoberfest.com).
-2. Submit **4 pull requests (PRs)** to any open-source project on GitHub between October 1 and October 31, 2024.
-3. PRs must be meaningful—no spammy contributions, please!
-
-For more details, visit the Hacktoberfest website.
+</div>
 
 ---
 
-## 🤔 How to Contribute
+## 📌 Overview
 
-Our [CONTRIBUTING.md](./CONTRIBUTING.md) file provides detailed instructions, but here’s a quick overview:
+This repository showcases **three complete, battle-tested sportsbook platforms**, each targeting a different market and technology stack:
 
-1. **Fork** this repository.
-2. **Clone** the repository to your machine.
-3. **Create a new branch** for your changes.
-4. **Make your contributions** (fix bugs, add features, improve documentation).
-5. **Commit** your changes with a clear message.
-6. **Push** your branch and open a pull request here.
+| Version | Product | Highlights | Payments |
+|:-------:|---------|-----------|----------|
+| **[V1](#-version-1--boibook--crypto-sportsbook)** | 🟢 **BoiBook** | Crypto sportsbook + full admin back office | Crypto (SOL) & fiat (XAF) |
+| **[V2](#-version-2--betfrenzy--sportsbook--casino-platform)** | 💚 **BetFrenzy** | Sportsbook + Casino, bonuses, raffles & promos | Mobile Money & fiat (XAF) |
+| **[V3](#-version-3--web3-decentralized-sportsbook-azuro)** | 🟣 **Web3 Sportsbook** | Fully decentralized, on-chain betting (Azuro) | Wallet connect, AZUSD on Polygon |
 
-Please follow the coding standards and contribution guidelines to ensure a smooth process for everyone!
-
----
-
-## 🛠️ Contribution Areas
-
-Not sure where to start? Check out these ideas:
-
-- **Bug Fixes**: Look at the Issues tab for reported bugs.
-- **New Features**: Have an idea? Propose it or contribute directly.
-- **Documentation**: Help make the docs more comprehensive.
-- **Refactoring**: Improve code readability and maintainability.
-- **UI/UX Enhancements**: Suggest or add design improvements.
+Every version ships with **live in-play betting, pre-match markets, single & multi (parlay) bet slips, real-time odds feeds, and multi-language support**.
 
 ---
 
-## 📌 Labels Guide
+## 🟢 Version 1 — BoiBook · Crypto Sportsbook
 
-We use labels to help categorize issues and pull requests:
+A sleek dark-theme crypto sportsbook with a complete **admin back office**. Supports decimal & American odds, deep market coverage (1x2, Asian Handicap, Over/Under, half markets and more), live match tracker, and a crypto wallet with instant deposits & withdrawals.
 
-- **good first issue**: Great for first-time contributors.
-- **bug**: Issues related to bugs and malfunctions.
-- **enhancement**: Suggestions or requests for new features.
-- **documentation**: Anything related to improving documentation.
+### 🎬 Demo Video
+
+▶️ **[Watch BoiBook in action](version-1/sports-betting-1.mp4)**
+
+### ✨ Key Features
+
+- ⚡ **Live & pre-match betting** — real-time scores and odds across 17+ leagues, 130+ daily events
+- 🧾 **Smart bet slip** — Single & Multi modes, live payout estimation, recent bets history
+- 📊 **Rich markets** — 1x2, Asian Handicap, Spread, Over/Under, 1st Half markets, "More +" expandable odds
+- 💰 **Crypto wallet** — on-site balance, deposits & withdrawals (SOL, XAF and easily extendable tokens)
+- 🌍 **Multi-language** ready
+
+### 🖼️ Screenshots
+
+| Sportsbook Home & Bet Slip | Match Detail & Markets |
+|:---:|:---:|
+| ![BoiBook home](version-1/Screenshot_1.png) | ![Match markets](version-1/Screenshot_17.png) |
+
+| | |
+|:---:|:---:|
+| ![Screenshot 2](version-1/Screenshot_2.png) | ![Screenshot 3](version-1/Screenshot_3.png) |
+| ![Screenshot 15](version-1/Screenshot_15.png) | ![Screenshot 16](version-1/Screenshot_16.png) |
+| ![Screenshot 18](version-1/Screenshot_18.png) | |
+
+### 🛠️ Admin Back Office
+
+Full-featured admin panel: player analytics (logins, registrations, active players), **per-token balance / deposit / withdrawal tracking**, sports P&L reporting (profit, total bets, active bets, win/lost/refund), user management, sports & match management, brackets, payments, advertisement and language modules.
+
+![Admin Dashboard](Screenshot_14.png)
 
 ---
 
-## 📝 Code of Conduct
+## 💚 Version 2 — BetFrenzy · Sportsbook + Casino Platform
 
-We’re committed to creating an inclusive and respectful community. Please adhere to our [Code of Conduct](./CODE_OF_CONDUCT.md) in all interactions to help foster a positive environment.
+A complete **iGaming platform combining Sportsbook and Casino**, built for high-volume markets with fiat & Mobile Money payments (XAF), aggressive promo tooling, and a conversion-optimized UX.
+
+### 🎬 Demo Video
+
+▶️ **[Watch BetFrenzy in action](version-2/sports-betting-2.mp4)**
+
+### ✨ Key Features
+
+- 🎰 **Casino + Sports** in one wallet and one account
+- 🎁 **Promotions engine** — welcome deposit bonuses (e.g. 200% up to 100,000 XAF), countdown offers, daily/weekly/monthly raffles & jackpots
+- 📱 **Mobile Money & instant payments** — instant deposits, fast withdrawals
+- 🔗 **Booking codes** — share & load bet slips with a single code
+- ⚡ **Quick Bets** — one-click accumulator suggestions (All 1-Up, All 2-Up, Highest Odds)
+- 📅 **Live / Upcoming / Matches-by-Day** views with odds grid (Full Time, Over/Under, 1st Half)
+- 🌍 **Multi-language** (EN / FR) — tailored for African & international markets
+- ✅ Accept-odds-change toggle, balance-after-bet preview, possible-win calculation
+
+### 🖼️ Screenshots
+
+| Home, Promos & Bet Slip | Odds Grid & Multiple Bets |
+|:---:|:---:|
+| ![BetFrenzy home](version-2/Screenshot_7.png) | ![Odds grid](version-2/Screenshot_10.png) |
+
+| | |
+|:---:|:---:|
+| ![Screenshot 8](version-2/Screenshot_8.png) | ![Screenshot 9](version-2/Screenshot_9.png) |
+| ![Screenshot 11](version-2/Screenshot_11.png) | ![Screenshot 12](version-2/Screenshot_12.png) |
+| ![Screenshot 13](version-2/Screenshot_13.png) | |
 
 ---
 
-## ✨ Additional Resources
+## 🟣 Version 3 — Web3 Decentralized Sportsbook (Azuro)
 
-- [Hacktoberfest Official Website](https://hacktoberfest.com)
-- [How to Make a Pull Request](https://opensource.com/article/19/7/create-pull-request-github)
-- [Markdown Guide](https://www.markdownguide.org)
+A **fully on-chain, non-custodial sportsbook** built on the **Azuro protocol**. Players connect their own wallet (MetaMask & more), deposit stablecoins, and place bets that settle transparently on-chain — no traditional account required.
 
-Thank you for joining us! Let's make Hacktoberfest 2024 a memorable and impactful event. Happy Hacking! 🎉
-```
+### 🎬 Demo Video
+
+▶️ **[Watch the Web3 Sportsbook in action](version-3/sports-betting-3.mp4)**
+
+### ✨ Key Features
+
+- 🦊 **Wallet-native UX** — connect / disconnect with MetaMask and other wallets, bet directly from your address
+- ⛓️ **On-chain settlement** — powered by the Azuro protocol liquidity layer
+- 💵 **Stablecoin betting** — AZUSD deposits on Polygon (testnet-ready on Polygon Amoy, mainnet-ready architecture)
+- 🌊 **Azuro Wave Points** — built-in loyalty & rewards integration
+- 🔴 **Live betting** — "Show only live" filter, real-time in-play odds across dozens of leagues
+- 🌍 **Global coverage** — 100+ soccer leagues, MMA/UFC and more, with search across events & leagues
+
+### 🖼️ Screenshots
+
+| Sportsbook & Wallet Profile | On-chain Deposit Flow |
+|:---:|:---:|
+| ![Web3 sportsbook](version-3/Screenshot_4.png) | ![Deposit AZUSD](version-3/Screenshot_6.png) |
+
+| Live Betting |
+|:---:|
+| ![Live betting](version-3/Screenshot_5.png) |
+
+---
+
+## 🚀 Why Choose Our Platforms?
+
+- ✅ **Proven in production** — real products, not templates
+- 🎨 **Fully customizable** — branding, odds formats, markets, tokens, languages
+- 🔌 **Odds feed integration** — live & pre-match data across all major sports
+- 💳 **Flexible payments** — crypto, stablecoins, Mobile Money, fiat
+- 🛠️ **Complete back office** — players, finances, sports, matches, promos
+- 📱 **Responsive** — desktop & mobile optimized
+- 🤝 **Full source code delivery, deployment support & long-term maintenance available**
+
+---
+
+## 📞 Contact & Purchase
+
+<div align="center">
+
+**Interested in a demo, custom build, or white-label license?**
+
+💬 **Telegram:** [https://t.me/igamezgamble](https://t.me/igamezgamble)
+
+🌐 **Product website:** [https://kavenzagaming.com/](https://kavenzagaming.com/)
+
+*Custom features, reskins, new payment integrations and turnkey deployment — all available on request.*
+
+</div>
+
+---
+
+<div align="center">
+
+⭐ **If you find this project interesting, give it a star!** ⭐
+
+`sportsbook` · `sports-betting` · `igaming` · `casino` · `crypto-betting` · `web3` · `azuro` · `polygon` · `solana` · `betting-platform` · `bookmaker-software`
+
+</div>
