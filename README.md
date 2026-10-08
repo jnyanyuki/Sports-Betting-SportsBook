@@ -33,9 +33,9 @@ A sleek dark-theme crypto sportsbook with a complete **admin back office**. Supp
 
 ### 🎬 Demo Video
 
-[![BoiBook demo](version-1/demo-1.gif)](version-1/sports-betting-1.mp4)
+[![BoiBook demo](docs/version-1/demo-1.gif)](docs/version-1/sports-betting-1.mp4)
 
-*▶️ Click the preview above to watch the [full video](version-1/sports-betting-1.mp4)*
+*▶️ Click the preview above to watch the [full video](docs/version-1/sports-betting-1.mp4)*
 
 ### ✨ Key Features
 
@@ -49,19 +49,19 @@ A sleek dark-theme crypto sportsbook with a complete **admin back office**. Supp
 
 | Sportsbook Home & Bet Slip | Match Detail & Markets |
 |:---:|:---:|
-| ![BoiBook home](version-1/Screenshot_1.png) | ![Match markets](version-1/Screenshot_17.png) |
+| ![BoiBook home](docs/version-1/Screenshot_1.png) | ![Match markets](docs/version-1/Screenshot_17.png) |
 
 | | |
 |:---:|:---:|
-| ![Screenshot 2](version-1/Screenshot_2.png) | ![Screenshot 3](version-1/Screenshot_3.png) |
-| ![Screenshot 15](version-1/Screenshot_15.png) | ![Screenshot 16](version-1/Screenshot_16.png) |
-| ![Screenshot 18](version-1/Screenshot_18.png) | |
+| ![Screenshot 2](docs/version-1/Screenshot_2.png) | ![Screenshot 3](docs/version-1/Screenshot_3.png) |
+| ![Screenshot 15](docs/version-1/Screenshot_15.png) | ![Screenshot 16](docs/version-1/Screenshot_16.png) |
+| ![Screenshot 18](docs/version-1/Screenshot_18.png) | |
 
 ### 🛠️ Admin Back Office
 
 Full-featured admin panel: player analytics (logins, registrations, active players), **per-token balance / deposit / withdrawal tracking**, sports P&L reporting (profit, total bets, active bets, win/lost/refund), user management, sports & match management, brackets, payments, advertisement and language modules.
 
-![Admin Dashboard](Screenshot_14.png)
+![Admin Dashboard](docs/Screenshot_14.png)
 
 ---
 
@@ -71,9 +71,9 @@ A complete **iGaming platform combining Sportsbook and Casino**, built for high-
 
 ### 🎬 Demo Video
 
-[![BetFrenzy demo](version-2/demo-2.gif)](version-2/sports-betting-2.mp4)
+[![BetFrenzy demo](docs/version-2/demo-2.gif)](docs/version-2/sports-betting-2.mp4)
 
-*▶️ Click the preview above to watch the [full video](version-2/sports-betting-2.mp4)*
+*▶️ Click the preview above to watch the [full video](docs/version-2/sports-betting-2.mp4)*
 
 ### ✨ Key Features
 
@@ -90,13 +90,13 @@ A complete **iGaming platform combining Sportsbook and Casino**, built for high-
 
 | Home, Promos & Bet Slip | Odds Grid & Multiple Bets |
 |:---:|:---:|
-| ![BetFrenzy home](version-2/Screenshot_7.png) | ![Odds grid](version-2/Screenshot_10.png) |
+| ![BetFrenzy home](docs/version-2/Screenshot_7.png) | ![Odds grid](docs/version-2/Screenshot_10.png) |
 
 | | |
 |:---:|:---:|
-| ![Screenshot 8](version-2/Screenshot_8.png) | ![Screenshot 9](version-2/Screenshot_9.png) |
-| ![Screenshot 11](version-2/Screenshot_11.png) | ![Screenshot 12](version-2/Screenshot_12.png) |
-| ![Screenshot 13](version-2/Screenshot_13.png) | |
+| ![Screenshot 8](docs/version-2/Screenshot_8.png) | ![Screenshot 9](docs/version-2/Screenshot_9.png) |
+| ![Screenshot 11](docs/version-2/Screenshot_11.png) | ![Screenshot 12](docs/version-2/Screenshot_12.png) |
+| ![Screenshot 13](docs/version-2/Screenshot_13.png) | |
 
 ---
 
@@ -106,9 +106,9 @@ A **fully on-chain, non-custodial sportsbook** built on the **Azuro protocol**. 
 
 ### 🎬 Demo Video
 
-[![Web3 Sportsbook demo](version-3/demo-3.gif)](version-3/sports-betting-3.mp4)
+[![Web3 Sportsbook demo](docs/version-3/demo-3.gif)](docs/version-3/sports-betting-3.mp4)
 
-*▶️ Click the preview above to watch the [full video](version-3/sports-betting-3.mp4)*
+*▶️ Click the preview above to watch the [full video](docs/version-3/sports-betting-3.mp4)*
 
 ### ✨ Key Features
 
@@ -123,11 +123,49 @@ A **fully on-chain, non-custodial sportsbook** built on the **Azuro protocol**. 
 
 | Sportsbook & Wallet Profile | On-chain Deposit Flow |
 |:---:|:---:|
-| ![Web3 sportsbook](version-3/Screenshot_4.png) | ![Deposit AZUSD](version-3/Screenshot_6.png) |
+| ![Web3 sportsbook](docs/version-3/Screenshot_4.png) | ![Deposit AZUSD](docs/version-3/Screenshot_6.png) |
 
 | Live Betting |
 |:---:|
-| ![Live betting](version-3/Screenshot_5.png) |
+| ![Live betting](docs/version-3/Screenshot_5.png) |
+
+---
+
+## 🏛️ Universal Base Architecture & Monorepo Layout
+
+The repository is structured as a **Universal Monorepo** with clear separation between application services (`apps/`) and project documentation (`docs/`).
+
+```
+Sports-Betting-SportsBook/
+├── apps/
+│   ├── backend/        # Node.js, Express, TypeScript API Server
+│   ├── frontend/       # Sportsbook React Client Application
+│   └── admin/          # Admin Dashboard React Application
+├── docs/               # Architecture docs & product media
+│   ├── version-1/
+│   ├── version-2/
+│   └── version-3/
+├── package.json        # Root workspace orchestration
+└── README.md
+```
+
+### ⚡ Running Services via Root Workspace Commands
+
+You can run individual apps directly from the root workspace:
+
+```bash
+# Start Backend API Server
+npm run dev:backend
+
+# Start Frontend Sportsbook Client
+npm run dev:frontend
+
+# Start Admin Dashboard
+npm run dev:admin
+
+# Build all applications
+npm run build
+```
 
 ---
 

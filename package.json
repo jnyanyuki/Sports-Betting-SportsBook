@@ -1,0 +1,31 @@
+{
+  "name": "sports-betting-platform",
+  "version": "1.0.0",
+  "description": "Universal Monorepo for Sports Betting & iGaming Platform",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "install:all": "npm install --legacy-peer-deps",
+    "dev:backend": "npm run dev --workspace=apps/backend",
+    "dev:frontend": "npm run start --workspace=apps/frontend",
+    "dev:admin": "npm run dev --workspace=apps/admin",
+    "build:backend": "npm run build --workspace=apps/backend",
+    "build:frontend": "npm run build --workspace=apps/frontend",
+    "build:admin": "npm run build --workspace=apps/admin",
+    "build": "npm run build --workspaces",
+    "start:all": "start-all.bat"
+  },
+  "keywords": [
+    "sportsbook",
+    "sports-betting",
+    "igaming",
+    "monorepo",
+    "express",
+    "react",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC"
+}
