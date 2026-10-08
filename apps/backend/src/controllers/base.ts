@@ -7,7 +7,7 @@ import * as nodemailer from "nodemailer";
 import * as moment from "moment-timezone";
 import mongoose, { ObjectId as ObjectIdType } from "mongoose";
 import { Request, Response, NextFunction } from "express";
-import { RateLimiterMongo } from "rate-limiter-flexible";
+import { RateLimiterMongo, RateLimiterMemory } from "rate-limiter-flexible";
 import {
   BalanceHistories,
   Balances,
@@ -21,23 +21,58 @@ const V2 = require("recaptcha-v2");
 const config = require("../../config");
 
 export const maxFailsByLogin = 10000;
-const mongoConn = mongoose.connection;
-const usernameOpts = {
-  storeClient: mongoConn,
-  keyPrefix: "login_fail_username",
-  points: maxFailsByLogin,
-  duration: 60 * 60 * 3,
-  blockDuration: 60 * 15,
+const memoryLimiter = new RateLimiterMemory({ points: maxFailsByLogin, duration: 60 * 60 * 3 });
+
+let _usernameLimiter: any = null;
+let _ipLimiter: any = null;
+
+export const usernameLimiter = {
+  consume: async (key: string, points?: number) => {
+    if (mongoose.connection.readyState === 1) {
+      if (!_usernameLimiter) {
+        _usernameLimiter = new RateLimiterMongo({
+          storeClient: mongoose.connection,
+          keyPrefix: "login_fail_username",
+          points: maxFailsByLogin,
+          duration: 60 * 60 * 3,
+          blockDuration: 60 * 15,
+        });
+      }
+      return _usernameLimiter.consume(key, points);
+    }
+    return memoryLimiter.consume(key, points);
+  },
+  delete: async (key: string) => {
+    if (_usernameLimiter && mongoose.connection.readyState === 1) {
+      return _usernameLimiter.delete(key);
+    }
+    return memoryLimiter.delete(key);
+  }
 };
-const ipOpts = {
-  storeClient: mongoConn,
-  keyPrefix: "login_fail_ip",
-  points: maxFailsByLogin,
-  duration: 60 * 60 * 3,
-  blockDuration: 60 * 15,
+
+export const ipLimiter = {
+  consume: async (key: string, points?: number) => {
+    if (mongoose.connection.readyState === 1) {
+      if (!_ipLimiter) {
+        _ipLimiter = new RateLimiterMongo({
+          storeClient: mongoose.connection,
+          keyPrefix: "login_fail_ip",
+          points: maxFailsByLogin,
+          duration: 60 * 60 * 3,
+          blockDuration: 60 * 15,
+        });
+      }
+      return _ipLimiter.consume(key, points);
+    }
+    return memoryLimiter.consume(key, points);
+  },
+  delete: async (key: string) => {
+    if (_ipLimiter && mongoose.connection.readyState === 1) {
+      return _ipLimiter.delete(key);
+    }
+    return memoryLimiter.delete(key);
+  }
 };
-export const usernameLimiter = new RateLimiterMongo(usernameOpts);
-export const ipLimiter = new RateLimiterMongo(ipOpts);
 
 export const getIpKey = (req: Request): string =>
   req.ip ?? requestIp.getClientIp(req) ?? "unknown";

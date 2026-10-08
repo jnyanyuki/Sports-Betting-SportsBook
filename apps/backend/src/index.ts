@@ -110,17 +110,29 @@ app.get("*", (req: express.Request, res: express.Response) =>
 
 app.use(RetrunValidation);
 
-mongoose
-  .connect(process.env.DATABASE as string)
-  .then(() => {
-    const http = require("http").createServer(app);
-    const io = require("socket.io")(http, { cors: { origin: "*" } });
-    socket(io);
-    app.set("io", io);
-    const port = process.env.PORT;
-    http.listen(port);
+const startServer = () => {
+  const http = require("http").createServer(app);
+  const io = require("socket.io")(http, { cors: { origin: "*" } });
+  socket(io);
+  app.set("io", io);
+  const port = process.env.PORT || 2020;
+  http.listen(port, () => {
     console.log("server listening on:", port);
+  });
+};
+
+mongoose.set("bufferCommands", false);
+mongoose.set("strictQuery", false);
+
+mongoose
+  .connect(process.env.DATABASE as string, {
+    serverSelectionTimeoutMS: 5000,
+  })
+  .then(() => {
+    console.log("Database connected successfully");
   })
   .catch((error: any) => {
-    console.log("database connection error => ", error);
+    console.log("database connection warning => ", error.message || error);
   });
+
+startServer();

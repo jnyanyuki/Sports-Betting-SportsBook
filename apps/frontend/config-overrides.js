@@ -1,54 +1,51 @@
-/* config-overrides.js */
+/* config-overrides.js for Webpack 4 */
 const webpack = require('webpack');
-// const paths = require('react-scripts-ts/config/paths')
+const path = require('path');
 
 module.exports = function override(config, env) {
-    //do stuff with the webpack config...]
-
     config.module.rules.push({
-        test: /\.tsx?$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/,
-        options: {
-            transpileOnly: true,
-            configFile: 'tsconfig.json',
-        },
-    })
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto'
+    });
+
+    config.resolve.modules = [
+        path.resolve(__dirname, 'src'),
+        'node_modules'
+    ];
+
+    const emptyPath = path.resolve(__dirname, 'src/empty.js');
+    const proxyPath = path.resolve(__dirname, 'src/generic-proxy-stub.js');
+    const solanaStubPath = path.resolve(__dirname, 'src/solana-stub.tsx');
+
+    config.resolve.alias = {
+        ...(config.resolve.alias || {}),
+        '@solana-mobile/mobile-wallet-adapter-protocol/encoding': emptyPath,
+        '@solana-mobile/mobile-wallet-adapter-protocol': emptyPath,
+        '@solana-mobile/wallet-adapter-mobile': emptyPath,
+        '@solana/wallet-adapter-react': solanaStubPath,
+        '@solana/wallet-adapter-base': solanaStubPath,
+        '@solana/wallet-adapter-wallets': solanaStubPath,
+        '@solana/wallet-adapter-react-ui/styles.css': emptyPath,
+        '@solana/wallet-adapter-react-ui': emptyPath,
+        '@solana/web3.js': solanaStubPath,
+        '@solana/wallet-standard-util': emptyPath,
+        '@solana/errors': proxyPath,
+        '@solana/codecs-core': proxyPath,
+        '@solana/codecs-numbers': proxyPath,
+        '@solana/codecs-strings': proxyPath,
+        '@solana/options': proxyPath,
+        '@solana/keys': proxyPath,
+        '@solana/sysvars': proxyPath,
+        react: path.dirname(require.resolve('react/package.json')),
+        'react-dom': path.dirname(require.resolve('react-dom/package.json')),
+        '@ledgerhq/hw-transport': emptyPath,
+        '@ledgerhq/hw-transport-webhid': emptyPath
+    };
 
     config.resolve.extensions = [
-        '*', '.js', '.jsx', '.ts', '.tsx'
-    ]
-
-    // config.module.rules.push({
-    //     test: /\.(js|jsx)$/,
-    //     include: paths.appSrc,
-    //     loader: require.resolve('babel-loader'),
-    //     options: {
-    //         babelrc: false,
-    //         presets: [require.resolve('babel-preset-react-app')],
-    //         cacheDirectory: true,
-    //     },
-    // })
-
-    config.resolve.fallback = {
-        url: require.resolve('url'),
-        fs: require.resolve('fs'),
-        assert: require.resolve('assert/'),
-        crypto: require.resolve('crypto-browserify'),
-        http: require.resolve('stream-http'),
-        https: require.resolve('https-browserify'),
-        os: require.resolve('os-browserify/browser'),
-        buffer: require.resolve('buffer'),
-        stream: require.resolve('stream-browserify'),
-        path: require.resolve("path-browserify"),
-        vm: require.resolve("vm-browserify")
-    };
-    config.plugins.push(
-        new webpack.ProvidePlugin({
-            process: 'process/browser',
-            Buffer: ['buffer', 'Buffer'],
-        }),
-    );
+        '*', '.js', '.jsx', '.ts', '.tsx', '.mjs'
+    ];
 
     return config;
-}
+};

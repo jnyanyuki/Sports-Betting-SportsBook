@@ -9,7 +9,7 @@ const axiosServices = axios.create();
 axiosServices.interceptors.request.use(
     (config: any) => {
         config.baseURL = BASE_URL;
-        const state = store.getState() as any;
+        const state: any = store.getState();
         const accessToken = state.auth.token;
         if (accessToken) {
             config.headers.authorization = accessToken;

@@ -1,0 +1,1 @@
+import React from 'react'; export default function Routes() { return (<div style={{ padding: '2rem', textAlign: 'center', fontFamily: 'sans-serif' }}><h1>? Sports Betting & iGaming Platform</h1><p>Client application active.</p></div>); }

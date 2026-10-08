@@ -1,5 +1,2 @@
-import Router from './router/Router'
+import React from 'react'; import { BrowserRouter, Route, Switch } from 'react-router-dom'; import Dashboard from './views/dashboard'; import Login from './views/authentication/Login'; const App = () => (<BrowserRouter><Switch><Route exact path='/' component={Dashboard} /><Route path='/dashboard' component={Dashboard} /><Route path='/login' component={Login} /><Route component={Dashboard} /></Switch></BrowserRouter>); export default App
 
-const App = () => <Router />
-
-export default App

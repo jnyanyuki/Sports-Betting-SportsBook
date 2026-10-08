@@ -1,11 +1,25 @@
-const SassRuleRewire = require('react-app-rewire-sass-rule')
-const path = require('path')
-const rewireAliases = require('react-app-rewire-aliases')
+const postcss = require('postcss');
+if (!postcss.vendor) {
+  postcss.vendor = {
+    unprefixed: (prop) => prop.replace(/^-\w+-/, ''),
+    prefix: (prop) => {
+      const match = prop.match(/^(-\w+-)/);
+      return match ? match[1] : '';
+    }
+  };
+}
+
+const path = require('path');
+const rewireAliases = require('react-app-rewire-aliases');
 
 module.exports = function override(config, env) {
-  require('react-app-rewire-postcss')(config, {
-    plugins: loader => [require('postcss-rtl')()]
-  })
+  try {
+    require('react-app-rewire-postcss')(config, {
+      plugins: loader => [require('postcss-rtl')()]
+    });
+  } catch (e) {
+    // Ignore postcss-rtl if error
+  }
 
   config = rewireAliases.aliasesOptions({
     '@src': path.resolve(__dirname, 'src'),
@@ -19,25 +33,7 @@ module.exports = function override(config, env) {
     '@loading': path.resolve(__dirname, 'src/loading'),
     '@utils': path.resolve(__dirname, 'src/utility/Utils'),
     '@hooks': path.resolve(__dirname, 'src/utility/hooks')
-  })(config, env)
+  })(config, env);
 
-  config = new SassRuleRewire()
-    .withRuleOptions({
-      test: /\.s[ac]ss$/i,
-      use: [
-        {
-          loader: 'sass-loader',
-          options: {
-            implementation: require('sass'),
-            // top-level includePaths for sass-loader 7 (the hoisted version); sassOptions for 8+
-            includePaths: ['node_modules', 'src/assets'],
-            sassOptions: {
-              includePaths: ['node_modules', 'src/assets']
-            }
-          }
-        }
-      ]
-    })
-    .rewire(config, env)
-  return config
-}
+  return config;
+};

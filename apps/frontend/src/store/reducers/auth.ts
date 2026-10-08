@@ -38,7 +38,7 @@ const auth = createSlice({
     initialState,
     reducers: {
         Login(state, action: PayloadAction<any>) {
-            const { balance, user, session } = action.payload!;
+            const { balance, user, session } = action.payload || {};
             state.user = user;
             state.token = session.accessToken;
             state.balance = balance.balance;
@@ -58,7 +58,7 @@ const auth = createSlice({
         },
 
         UpdateBalances(state, action: PayloadAction<any>) {
-            const balance = action.payload!;
+            const balance = action.payload;
             state.balance = balance.balance;
             state.balanceId = balance._id;
             state.currency = balance.currency;

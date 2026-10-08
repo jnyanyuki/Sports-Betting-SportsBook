@@ -3,7 +3,7 @@
     "version": "2.0.0",
     "private": true,
     "scripts": {
-        "start": "cross-env GENERATE_SOURCEMAP=false react-app-rewired start",
+        "start": "cross-env GENERATE_SOURCEMAP=false NODE_OPTIONS=--openssl-legacy-provider react-app-rewired start",
         "build": "cross-env GENERATE_SOURCEMAP=false react-app-rewired build",
         "test": "cross-env GENERATE_SOURCEMAP=false react-app-rewired test",
         "eject": "react-scripts eject"
@@ -83,7 +83,7 @@
     },
     "babel": {
         "presets": [
-            "@babel/preset-react"
+            ["react-app", { "typescript": true }]
         ]
     },
     "browserslist": {
@@ -100,6 +100,7 @@
     },
     "devDependencies": {
         "@babel/core": "^7.17.2",
+        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
         "@types/image-to-base64": "^2.1.0",
         "@types/jquery": "^3.5.14",
         "@types/react-copy-to-clipboard": "^5.0.2",
